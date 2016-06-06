@@ -4,8 +4,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 COPY files/ /
 RUN \
   apt-get -y update && \
-  apt-get -y install ruby-rspec ruby-serverspec ruby-docker-api git && \
-  gem install specinfra-backend-docker_compose && \
+  apt-get -y install ruby-rspec git && \
+  gem install serverspec docker-api && \
   locale-gen en_GB.utf8 && \
   apt-get -y clean && \
   rm -rf /var/lib/apt/lists/* && \
