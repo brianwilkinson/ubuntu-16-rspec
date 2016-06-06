@@ -8,12 +8,7 @@ RUN \
   gem install serverspec docker-api && \
   locale-gen en_GB.utf8 && \
   apt-get -y clean && \
-  rm -rf /var/lib/apt/lists/* && \
-  git clone https://github.com/jameseck/specinfra.git /tmp/specinfra.git && \
-  cd /tmp/specinfra.git && \
-  gem build specinfra.gemspec && \
-  gem install ./specinfra*.gem && \
-  rm -rf /tmp/specinfra.git
+  rm -rf /var/lib/apt/lists/*
 ENV \
   LC_ALL=en_GB.UTF-8 \
   LANG=en_GB.UTF-8 \
