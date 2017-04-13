@@ -8,5 +8,6 @@ RUN \
   gem install serverspec docker-api && \
   apt-get clean -q -y && \
   rm -rf /var/lib/apt/lists/*
+WORKDIR /mnt
 CMD /bin/bash
 
