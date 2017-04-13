@@ -9,9 +9,6 @@ if not ENV['IMAGE'] then
   puts "You must provide an IMAGE env variable"
 end
 
-LISTEN_PORT=8080
-CONTAINER_START_DELAY=2
-                                                                                                                                                       
 RSpec.configure do |c|                                                                                                                                 
   @image = Docker::Image.get(ENV['IMAGE'])                                                                                                             
   set :backend, :docker
