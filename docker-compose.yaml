@@ -1,9 +1,0 @@
-version: '2'
-services:
-  ubunturspec:
-    hostname: ubunturspect
-    container_name: ubunturspect
-    build: .
-    image: ubunturspec
-    ports:
-      - "8080:8080"
