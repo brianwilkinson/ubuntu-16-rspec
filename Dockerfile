@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM 1and1internet/ubuntu-16
 MAINTAINER james.wilkins@1and1.co.uk
 ARG DEBIAN_FRONTEND=noninteractive
 COPY files/ /
