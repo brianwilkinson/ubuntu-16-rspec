@@ -34,5 +34,18 @@ RSpec.configure do |c|
     describe package('make') do
       it { should be_installed }
     end
+
+    describe package('firefox') do
+      it { should be_installed }
+    end
+
+    describe package('xvfb') do
+      it { should be_installed }
+    end
+
+    describe package('ruby-ffi') do
+      it { should be_installed }
+    end
+
   end
 end

@@ -2,6 +2,8 @@
 
 Very simple image to use as the environment for running [RSpec tests](http://rspec.info/) against newly built Docker images.
 
+[Firefox](https://www.mozilla.org/en-GB/firefox/), [Selenium](http://www.seleniumhq.org/) and [watir](http://watir.github.io/) are included to allows the rspec tests to perform testing via a web browser. This image is currently pinned to Firefox v45 due to a compatibility issue with with the headless gem for watir and later versions of Firefox.
+
 ## Usage
 
 Run the this image with the following:
