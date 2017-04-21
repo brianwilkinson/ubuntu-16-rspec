@@ -4,7 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 COPY files/ /
 RUN \
   apt-get update -q && \
-  apt-get install -q -o Dpkg::Options::=--force-confdef -y ruby-rspec git && \
+  apt-get install -q -o Dpkg::Options::=--force-confdef -y ruby-rspec git make && \
   gem install serverspec docker-api && \
   apt-get clean -q -y && \
   rm -rf /var/lib/apt/lists/*

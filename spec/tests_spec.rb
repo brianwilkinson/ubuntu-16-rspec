@@ -30,5 +30,9 @@ RSpec.configure do |c|
     describe package('git') do
       it { should be_installed }
     end  
+
+    describe package('make') do
+      it { should be_installed }
+    end
   end
 end
