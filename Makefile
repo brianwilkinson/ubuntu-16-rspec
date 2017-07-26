@@ -48,4 +48,7 @@ run-rspec:
 	## Testing image ${IMAGE_NAME}
 	IMAGE=${IMAGE_NAME} rspec ${RSPEC_ARGS}
 
-.PHONY: all pull build test do-test checkout-drone-tests run-rspec
+clean:
+	-docker rmi ${IMAGE_NAME}
+
+.PHONY: all pull build test do-test checkout-drone-tests run-rspec clean

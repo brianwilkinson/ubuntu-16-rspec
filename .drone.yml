@@ -39,3 +39,14 @@ pipeline:
     commands:
      - python3 -u /scripts/images/publish.py
 
+  clean:
+    when:
+      event: push
+      status: [ success, failure ]
+    image: 1and1internet/template-library-tools
+    volumes:
+      - /secrets:/secrets
+      - /var/run/docker.sock:/var/run/docker.sock
+    commands:
+      - make clean IMAGE_NAME=build-${CI_REPO#*/}-${CI_BUILD_NUMBER}/${CI_REPO#*/}
+
