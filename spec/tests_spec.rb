@@ -17,7 +17,7 @@ RSpec.configure do |c|
     'User'       => '100000',
   }
 
-  describe "tests" do
+  describe "verify environment" do
     
     describe file('/etc/lsb-release') do
       it { should contain 'DISTRIB_RELEASE=16.04' }
@@ -44,6 +44,14 @@ RSpec.configure do |c|
     end
 
     describe package('ruby-ffi') do
+      it { should be_installed }
+    end
+
+    describe package('yamllint') do
+      it { should be_installed }
+    end
+
+    describe package('jsonlint') do
       it { should be_installed }
     end
 
