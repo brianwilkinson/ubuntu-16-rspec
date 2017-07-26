@@ -16,18 +16,18 @@ RUN \
 	verify_x509_certificate_fingerprint.sh pukiissuingca1.crt "E1:99:91:7B:7F:DE:02:AF:00:AC:D0:65:0D:7B:E0:42:2A:A6:8E:E4:C1:53:BA:12:EF:15:3D:DB:62:A2:9A:DC" && \
 	apt-get update -q && \
 	apt-get install -y software-properties-common python-software-properties apt-transport-https openssl ca-certificates && \
-	apt-key add /root/google-chrome-gpg-key && \
+	# apt-key add /root/google-chrome-gpg-key && \
 	apt-key add /root/docker-gpg-key && \
-	add-apt-repository "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" && \
+	# add-apt-repository "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" && \
 	add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
 	apt-get update -q && \
 	apt-get install -q -y build-essential make git wget unzip locales xvfb libav-tools && \
-	apt-get install -q -y chromium-chromedriver google-chrome-stable libnss3 libgconf-2-4 && \
+	# apt-get install -q -y chromium-chromedriver google-chrome-stable libnss3 libgconf-2-4 && \
 	apt-get install -q -y firefox=45.0.2+build1-0ubuntu1 && \
 	apt-get install -q -y docker-ce && \
 	apt-get install -q -y ruby ruby-dev ruby-rspec ruby-test-unit ruby-ffi bundler rant && \
-	unzip chromedriver_linux64.zip -d /usr/local/bin/ && \
-	chmod -v +x /usr/local/bin/chromedriver && \
+	# unzip chromedriver_linux64.zip -d /usr/local/bin/ && \
+	# chmod -v +x /usr/local/bin/chromedriver && \
 	mkdir -p /usr/share/ca-certificates/1and1/ && \
 	mv /root/pukirootca1.crt /usr/share/ca-certificates/1and1/ && \
 	mv /root/pukiissuingca1.crt /usr/share/ca-certificates/1and1/ && \
