@@ -2,6 +2,11 @@ FROM 1and1internet/ubuntu-16
 MAINTAINER brian.wojtczak@1and1.co.uk
 ARG DEBIAN_FRONTEND=noninteractive
 COPY files/ /
+# The chrome installation commands are commented out because we need to reintroduce them 
+# later date. Chrome is the browser of choice for the new version of watir, with Firefox 
+# not being fully supported. However running chrome in our infrastructure doesn't work 
+# at the moment. So we're sticking to an old version of watir and Firefox for the time 
+# being. At some point soon we will need to switch to Chrome.
 RUN \
 	cd /root && \
 	curl -fsSL https://dl-ssl.google.com/linux/linux_signing_key.pub --output google-chrome-gpg-key && \
