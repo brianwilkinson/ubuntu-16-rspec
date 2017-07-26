@@ -26,6 +26,9 @@ RUN \
 	apt-get install -q -y firefox=45.0.2+build1-0ubuntu1 && \
 	apt-get install -q -y docker-ce && \
 	apt-get install -q -y ruby ruby-dev ruby-rspec ruby-test-unit ruby-ffi bundler rant && \
+	apt-get install -q -y python-pkg-resources python-pip python3-pip yamllint python-demjson jsonlint && \
+	pip2 install --upgrade pip && \
+	pip3 install --upgrade pip && \
 	# unzip chromedriver_linux64.zip -d /usr/local/bin/ && \
 	# chmod -v +x /usr/local/bin/chromedriver && \
 	mkdir -p /usr/share/ca-certificates/1and1/ && \
