@@ -16,8 +16,9 @@ pull:
 	##
 	## Pulling image updates from registry
 	##
-	docker pull ${BASE_IMAGE}
-	docker pull ${RSPEC_IMAGE}
+	for IMAGE in ${BASE_IMAGE} ${RSPEC_IMAGE}; \
+		do docker pull $${IMAGE}; \
+	done
 
 build:
 	##
@@ -49,6 +50,11 @@ run-rspec:
 	IMAGE=${IMAGE_NAME} rspec ${RSPEC_ARGS}
 
 clean:
-	-docker rmi ${IMAGE_NAME}
+	##
+	## Removing docker images .. most errors during this stage are ok, ignore them
+	##
+	for IMAGE in ${BASE_IMAGE} ${RSPEC_IMAGE}; \
+		do docker pull $${IMAGE}; \
+	done
 
 .PHONY: all pull build test do-test checkout-drone-tests run-rspec clean
