@@ -2,10 +2,10 @@ FROM 1and1internet/ubuntu-16
 MAINTAINER brian.wojtczak@1and1.co.uk
 ARG DEBIAN_FRONTEND=noninteractive
 COPY files/ /
-# The chrome installation commands are commented out because we need to reintroduce them 
-# later date. Chrome is the browser of choice for the new version of watir, with Firefox 
-# not being fully supported. However running chrome in our infrastructure doesn't work 
-# at the moment. So we're sticking to an old version of watir and Firefox for the time 
+# The chrome installation commands are commented out because we need to reintroduce them
+# later date. Chrome is the browser of choice for the new version of watir, with Firefox
+# not being fully supported. However running chrome in our infrastructure doesn't work
+# at the moment. So we're sticking to an old version of watir and Firefox for the time
 # being. At some point soon we will need to switch to Chrome.
 RUN \
 	cd /root && \
@@ -31,9 +31,10 @@ RUN \
 	apt-get install -q -y firefox=45.0.2+build1-0ubuntu1 && \
 	apt-get install -q -y docker-ce && \
 	apt-get install -q -y ruby ruby-dev ruby-rspec ruby-test-unit ruby-ffi bundler rant && \
-	apt-get install -q -y python-pkg-resources python-pip python3-pip yamllint python-demjson jsonlint && \
-	pip2 install --upgrade pip && \
-	pip3 install --upgrade pip && \
+	apt-get install -q -y python-pkg-resources python3-pip yamllint python-demjson jsonlint && \
+	pip install --upgrade pip && \
+	apt-get remove -y python3-pip python-pip && \
+	easy_install3 pip && \
 	# unzip chromedriver_linux64.zip -d /usr/local/bin/ && \
 	# chmod -v +x /usr/local/bin/chromedriver && \
 	mkdir -p /usr/share/ca-certificates/1and1/ && \
