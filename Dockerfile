@@ -31,12 +31,9 @@ RUN \
 	apt-get install -q -y firefox=45.0.2+build1-0ubuntu1 && \
 	apt-get install -q -y docker-ce && \
 	apt-get install -q -y ruby ruby-dev ruby-rspec ruby-test-unit ruby-ffi bundler rant && \
-	apt-get install -q -y python-pkg-resources python3-pip yamllint python-demjson jsonlint && \
-	pip install --upgrade pip && \
-	apt-get remove -y python3-pip python-pip && \
-	easy_install3 pip && \
-	# unzip chromedriver_linux64.zip -d /usr/local/bin/ && \
-	# chmod -v +x /usr/local/bin/chromedriver && \
+	apt-get install -q -y python-pkg-resources yamllint python-demjson jsonlint && \
+	curl https://bootstrap.pypa.io/pip/3.5/get-pip.py -o get-pip.py && \
+	python3 get-pip.py && \
 	mkdir -p /usr/share/ca-certificates/1and1/ && \
 	mv /root/pukirootca1.crt /usr/share/ca-certificates/1and1/ && \
 	mv /root/pukiissuingca1.crt /usr/share/ca-certificates/1and1/ && \
